@@ -3,14 +3,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from 'react-hook-form'
 import { useRouter } from "next/router";
 
-import Link from "next/link"
+
 import { FaCoins } from "react-icons/fa"
 import { InputFormText } from "../../Inputs/InputFormText";
 
-interface UserProps {
-    email: string;
-    password: string;
-}
+
 
 const signInFormSchema = yup.object().shape({
     email: yup
@@ -30,7 +27,7 @@ export const FormLogin = () => {
     });
 
 
-    const handleSignIn = async ({ email, password }: UserProps) => {
+    const handleSignIn = async ({ email, password }) => {
         await new Promise(resolve => setTimeout(resolve, 2000))
         console.log(email, password)
 

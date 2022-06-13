@@ -1,15 +1,9 @@
 import { FiEdit } from "react-icons/fi"
 import { RiDeleteBin6Line } from "react-icons/ri"
 
-type TransctionProps = {
-    title: string 
-    amount: string 
-    date: string
-    typeAmount: string
-    
-}
 
-export const Transction = ({title, amount, date, typeAmount}: TransctionProps) => {
+
+export const Transction = ({title, amount, date, typeAmount}) => {
     return (
         <tr className="text-left  border-b border-dashed border-gray-700 text-slate-200">
             <th className="py-2">{title}</th>

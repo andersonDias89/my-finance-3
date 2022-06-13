@@ -4,21 +4,8 @@ import { InputTextSearchContacts } from "../../Inputs/InputTextSeachContact"
 import { Contact } from "./Contact"
 
 export const ListContacts = () => {
-    const { name, email } = useContext(ContactContext)
-    const [listContact, setListContact] = useState([
-        {
-            userName: "Maria da Silva",
-            userEmail: "mariadasilva@gmail.com"
-        },
-
-        {
-            userName: "Maria da Silva",
-            userEmail: "mariadasilva@gmail.com"
-        }
-    ])
-
-
-
+    const { name, email, listContact, setListContact } = useContext(ContactContext)
+    
     useEffect(() => {
         if (name !== '' && email !== '') {
             setListContact([
@@ -26,7 +13,6 @@ export const ListContacts = () => {
                 {
                     userName: name,
                     userEmail: email
-
                 }
             ])
             console.log(name)
