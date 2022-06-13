@@ -2,21 +2,41 @@ import { useContext, useEffect, useState } from "react"
 import { ContactContext } from "../../../contexts/ContactContext"
 import { InputTextSearchContacts } from "../../Inputs/InputTextSeachContact"
 import { Contact } from "./Contact"
+import { v4 as uuid } from 'uuid'
 
 export const ListContacts = () => {
-    const { name, email, listContact, setListContact } = useContext(ContactContext)
-    
+    const {
+        name,
+        email,
+        listContact,
+        setListContact,
+        cpf,
+        rg,
+        estado,
+        endereco,
+        cidade,
+        cellPhone,
+        phone
+    } = useContext(ContactContext)
+
     useEffect(() => {
         if (name !== '' && email !== '') {
             setListContact([
                 ...listContact,
                 {
+                    id: uuid(),
                     userName: name,
-                    userEmail: email
+                    userEmail: email,
+                    userCpf: cpf,
+                    userRg: rg,
+                    userEstado: estado,
+                    userCidade: cidade,
+                    userEndereco: endereco,
+                    userCellPhone: cellPhone,
+                    userPhone: phone
                 }
             ])
-            console.log(name)
-            console.log(email)
+            console.log(listContact)
         }
     }, [name, email])
 
@@ -29,7 +49,11 @@ export const ListContacts = () => {
             <div className="space-y-2 overflow-y-auto h-80 scroll-pl-px p-3">
                 {
                     listContact.map(contact => (
-                        <Contact userName={contact.userName} userEmail={contact.userEmail} />
+                        <Contact
+                            key={contact.id}
+                            userName={contact.userName}
+                            userEmail={contact.userEmail}
+                        />
                     ))
                 }
             </div>
@@ -38,59 +62,3 @@ export const ListContacts = () => {
     )
 }
 
-
-
-{/* <Contact
-                    name="Anderson Dias"
-                    email="andersondiasmd21@gmail.com"
-                />
-
-                <Contact
-                    name="Karol Barreto"
-                    email="karolbarreto@gmail.com"
-                />
-
-                <Contact
-                    name="Alice Barreto"
-                    email="alicebarreto@gmail.com"
-                />
-
-                <Contact
-                    name="Maria da Silva"
-                    email="mariadasilva@gmail.com"
-                />
-
-                <Contact
-                    name="Maria da Silva"
-                    email="mariadasilva@gmail.com"
-                />
-
-                <Contact
-                    name="Maria da Silva"
-                    email="mariadasilva@gmail.com"
-                />
-
-                <Contact
-                    name="Maria da Silva"
-                    email="mariadasilva@gmail.com"
-                />
-
-                <Contact
-                    name="Maria da Silva"
-                    email="mariadasilva@gmail.com"
-                />
-
-                <Contact
-                    name="Maria da Silva"
-                    email="mariadasilva@gmail.com"
-                />
-
-                <Contact
-                    name="Maria da Silva"
-                    email="mariadasilva@gmail.com"
-                />
-
-                <Contact
-                    name="Maria da Silva"
-                    email="mariadasilva@gmail.com"
-                /> */}

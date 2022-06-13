@@ -1,25 +1,6 @@
-import { IoMdContact } from "react-icons/io"
-import { FiEdit } from 'react-icons/fi'
-import { RiDeleteBin6Line } from 'react-icons/ri'
-
-
 export const ProfileContact = () => {
     return (
-        <div className="w-1/2 bg-box rounded-md px-5">
-            <header className="w-full h-20 border-b-2 border-line relative flex items-center justify-between">
-
-                <div className="flex justify-start text-2xl text-blueLight items-center space-x-2">
-                    <IoMdContact />
-                    <h2 className="text-xs text-slate-300 font-black">Maria da Silva</h2>
-                </div>
-                <div className="flex space-x-2">
-                    <a className="text-gray-600 hover:text-gray-500 text-lg cursor-pointer"><FiEdit /></a>
-                    <a className="text-red-900 hover:text-red-800 text-lg cursor-pointer"><RiDeleteBin6Line /></a>
-                </div>
-
-            </header>
-
-            <div className="space-y-1  p-4   border-b-2 border-line">
+        <div>
 
                 <dl className="flex justify-between text-xs bg-box rounded-lg p-2">
                     <dt className="text-gray-600 w-2/5">Nome:</dt>
@@ -62,13 +43,5 @@ export const ProfileContact = () => {
                 </dl>
 
             </div>
-
-            <dl className="text-xs bg-box p-2 mt-3">
-                <dt className="text-gray-600">Descrição:</dt>
-                <dd className="text-slate-200 ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia rerum corporis, animi voluptatum, perspiciatis soluta placeat dolorem commodi nostrum vel dolor earum. Officia quam tempore ducimus sed ex dicta rerum.</dd>
-            </dl>
-
-
-        </div>
     )
 }
